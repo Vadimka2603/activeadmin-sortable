@@ -22,7 +22,7 @@ module ActiveAdmin
       HANDLE = '&#x2195;'.html_safe
 
       def sortable_handle_column
-        column '', :class => "activeadmin-sortable" do |resource|
+        column 'Drag the icon below to move item order', :class => "activeadmin-sortable" do |resource|
           sort_url, query_params = resource_path(resource).split '?', 2
           sort_url += "/sort"
           sort_url += "?" + query_params if query_params
