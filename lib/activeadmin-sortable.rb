@@ -13,7 +13,7 @@ module ActiveAdmin
           else
             resource.insert_at params[:position].to_i
           end
-          head 200
+          head 200, message: 'All your changes are saved!'
         end
       end
     end
@@ -22,7 +22,7 @@ module ActiveAdmin
       HANDLE = '&#x2195;'.html_safe
 
       def sortable_handle_column
-        column 'Drag the icon below to move item order', :class => "activeadmin-sortable" do |resource|
+        column 'Drag the icon below to move item order on the page', :class => "activeadmin-sortable" do |resource|
           sort_url, query_params = resource_path(resource).split '?', 2
           sort_url += "/sort"
           sort_url += "?" + query_params if query_params
