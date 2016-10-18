@@ -13,7 +13,7 @@ module ActiveAdmin
           else
             resource.insert_at params[:position].to_i
           end
-          head 200, message: 'All your changes are saved!'
+          redirect_to :back, notice: 'All your changes are saved!'
         end
       end
     end
